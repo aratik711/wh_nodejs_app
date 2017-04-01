@@ -1,0 +1,7 @@
+---
+# vars file for nginx
+
+
+nginx_app_port: 80
+
+nginx_default_port: 8080

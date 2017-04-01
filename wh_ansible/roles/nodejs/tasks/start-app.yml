@@ -1,0 +1,11 @@
+---
+
+- name: Copy Timestamp application
+  template:
+    src: ts_app.js.j2
+    dest: "/home/{{ app_user }}/ts_app.js"
+
+- name: Start application
+  shell: node ts_app.js &
+  async: 5
+  poll: 0

@@ -1,0 +1,13 @@
+---
+
+# Installation and configuration of nginx
+
+- hosts: nginx
+  user: whuser
+  become: yes
+  become_method: sudo
+  connection: ssh
+  roles:
+     - nginx
+     
+

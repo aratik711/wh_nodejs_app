@@ -1,0 +1,13 @@
+---
+
+# Installation and configuration of nodejs
+
+- hosts: nodejs
+  user: whuser
+  become: yes
+  become_method: sudo
+  connection: ssh
+  roles:
+     - nodejs
+     
+

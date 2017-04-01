@@ -1,0 +1,13 @@
+---
+
+- name: Copy defaults file
+  template:
+    src: default.j2
+    dest: /etc/nginx/sites-available/default
+
+- name: Copy configuration file for node js
+  template:
+    src: ts_app.conf.j2
+    dest: /etc/nginx/conf.d/ts_app.conf
+  notify: 
+  - restart nginx
