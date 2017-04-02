@@ -24,17 +24,19 @@
 6. The ssh key should be present in the ~/.ssh directory of the user you will be executing the terraform and ansible. If not then generate it using
 > ssh-keygen -t rsa
 7. The user with which you will be executing the terraform and ansible commands should have sudo rights and must have passwordless sudo access. 
-a. To enable sudo. Login with root user. Edit /etc/sudoers and add the line: <username> ALL=(ALL)       ALL
-Replace the <username> with your username. 
-b. To enable passwordless sudo Login with root user. Edit /etc/sudoers and add the line: <username> ALL=(ALL)       NOPASSWD: ALL
-Replace the <username> with your username. Save and exit. 
-You will now have passwordless sudo rights.
-8. Execute the following steps:
-a. cd wh_nodejs_app
-b. ssh-keygen -t rsa -f wh_terraform/setup/dta/wh_nodejs_key
-c. openssl rsa -in wh_terraform/setup/dta/wh_nodejs_key -outform pem > wh_terraform/setup/dta/wh_nodejs_key.pem
-d. export AWS_ACCESS_KEY_ID="Your AWS access key"
-e. export AWS_SECRET_ACCESS_KEY="Your AWS secret key"
+    1. To enable sudo. Login with root user. Edit /etc/sudoers and add the line:  
+    `username ALL=(ALL)       ALL`  
+    Replace the username with your username. 
+    2. To enable passwordless sudo. Login with root user. Edit /etc/sudoers and add the line:  
+    `username ALL=(ALL)       NOPASSWD: ALL`  
+    Replace the username with your username.   
+    Save and exit. You will now have passwordless sudo rights.
+8. Execute the following commands:
+    * `cd wh_nodejs_app`
+    * `ssh-keygen -t rsa -f wh_terraform/setup/dta/wh_nodejs_key`
+    * `openssl rsa -in wh_terraform/setup/dta/wh_nodejs_key -outform pem > wh_terraform/setup/dta/wh_nodejs_key.pem`
+    * `export AWS_ACCESS_KEY_ID="Your AWS access key"`
+    * `export AWS_SECRET_ACCESS_KEY="Your AWS secret key"`
 
 ## Variables to edit:
 1. Edit the wh_nodejs_app/wh_terraform/variables.tf
