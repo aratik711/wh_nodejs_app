@@ -1,5 +1,5 @@
 [nodejs]
-<nodejs_hostname>
+wh-nodejs.whitehedge.local
 
 [nginx]
-<nginx_hostname>
+wh-nodejs.whitehedge.local
