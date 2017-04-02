@@ -80,7 +80,7 @@ Note: Do edit the variables marked as <b>required</b>.
 5. The code only supports passphraseless ssh currently.
 
 ## Cleanup
-1. Edit /etc/sudoers and remove the entry of the AWS nodejs instance.
+1. Edit /etc/hosts and remove the entry of the AWS nodejs instance.
 2. Edit ~/.ssh/known_hosts remove the entry for AWS nodejs instance
 3. Go to AWS EC2 console -> Click on nodejs instance -> Actions -> Instance Settings -> Change Termination Protection -> Disable 
 3. Execute the following commands:  
