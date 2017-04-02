@@ -5,7 +5,7 @@
 * The nodejs application will display the current timestamp of the AWS instance.
 * The nodejs app will be routed via nginx.
 * This project will provision the instance via terraform and deploy nodejs and nginx via ansible.
-* The application will be available on the public ip of the AWS instance on port 80.
+* The application will be available on the public ip of the AWS instance on port 80. The public IP will be provided in the output of terraform command.
 
 ## Presumptions:
 1. Nginx and nodejs servers are placed in the same machine.
