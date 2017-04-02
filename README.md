@@ -71,3 +71,11 @@
 2. The nodejs app displays static timestamp (current timestamp when the webpage was loaded).
 3. The terraform and ansible controller machines have to be Centos 6/7 OS.
 4. The nodejs and nginx will be deployed on Ubuntu 16 OS.
+
+## Cleanup
+1. Edit /etc/sudoers and remove the entry of the AWS nodejs instance.
+2. Edit ~/.ssh/known_hosts remove the entry for AWS nodejs instance
+3. Execute the following commands:  
+    * `cd wh_nodejs_app/wh_terraform`
+    * `terraform apply -state=state/dta/wh-aws-nodejs.tfstate`  
+    You will be asked for confirmation type `yes`. All of the created resources will be deleted.
