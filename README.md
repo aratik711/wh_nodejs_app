@@ -76,7 +76,7 @@ Note: Do edit the variables marked as <b>required</b>.
 1. The code has been tested on AWS Seoul and Virginia region but will work on other regions as well.
 2. The nodejs app displays static timestamp (current timestamp when the webpage was loaded).
 3. The terraform and ansible controller machines have to be Centos 6/7 OS.
-4. The nodejs and nginx will be deployed on Ubuntu 16 OS.
+4. The nodejs and nginx will be deployed on Ubuntu 16 OS. The image used will be "ubuntu/images/hvm-ssd/ubuntu-xenial-16.04" and of type "hvm"
 5. The code only supports passphraseless ssh currently.
 
 ## Cleanup
