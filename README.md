@@ -5,6 +5,7 @@ The wh_nodejs_app project is used to deploy a simple nodejs appication on an AWS
 The nodejs application will display the current timestamp of the AWS instance.
 The nodejs app will be routed via nginx.
 This project will provision the instance via terraform and deploy nodejs and nginx via ansible.
+The application will be available on the public ip of the AWS instance on port 80.
 
 Presumptions:
 1. Nginx and nodejs servers are placed in the same machine.
