@@ -71,6 +71,7 @@
 2. The nodejs app displays static timestamp (current timestamp when the webpage was loaded).
 3. The terraform and ansible controller machines have to be Centos 6/7 OS.
 4. The nodejs and nginx will be deployed on Ubuntu 16 OS.
+5. The code only supports passphraseless ssh currently.
 
 ## Cleanup
 1. Edit /etc/sudoers and remove the entry of the AWS nodejs instance.
