@@ -36,13 +36,16 @@
     * `ssh-keygen -t rsa -f wh_terraform/setup/dta/wh_nodejs_key -q -N ""`
     * `openssl rsa -in wh_terraform/setup/dta/wh_nodejs_key -outform pem > wh_terraform/setup/dta/wh_nodejs_key.pem`
     * `export AWS_ACCESS_KEY_ID="Your AWS access key"`
-    * `export AWS_SECRET_ACCESS_KEY="Your AWS secret key"`
+    * `export AWS_SECRET_ACCESS_KEY="Your AWS secret key"`  
+    Note: Here the key-name is wh_nodejs_key. You can change it as per your requirement.  
+    You will have to change the key-name in terrafrm variable as mentioned below.
+    
 
 ## Variables to edit:
 Note: Do edit the variables marked as <b>required</b>.
 1. Edit the wh_nodejs_app/wh_terraform/variables.tf
     * Set the `tf_home` variable to the directory where the wh_terraform directory is cloned.<b>(required)</b>
-    * Set the `aws_key_name` to the name of the key to be created in the region of your choice.(optional)
+    * Set the `aws_key_name` to the name of the key to be created in the region of your choice. Please enter the name of the key you created in the above ssh-keygen steps(optional)
     * Set the `aws_region` to the ID of the region of your choice.(optional)
     * Set the `instance_type` to the size of instance you require.(default: t2.medium)(optional)
     * Set the `server_names` variable to the name you want the instance to display in AWS EC2 console.(optional)
