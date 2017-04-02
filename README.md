@@ -77,5 +77,5 @@
 2. Edit ~/.ssh/known_hosts remove the entry for AWS nodejs instance
 3. Execute the following commands:  
     * `cd wh_nodejs_app/wh_terraform`
-    * `terraform apply -state=state/dta/wh-aws-nodejs.tfstate`  
+    * `terraform destroy -state=state/dta/wh-aws-nodejs.tfstate`  
     You will be asked for confirmation type `yes`. All of the created resources will be deleted.
