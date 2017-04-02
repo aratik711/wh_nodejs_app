@@ -39,6 +39,7 @@
     * `export AWS_SECRET_ACCESS_KEY="Your AWS secret key"`
 
 ## Variables to edit:
+Note: Do edit the variables marked as <b>required</b>.
 1. Edit the wh_nodejs_app/wh_terraform/variables.tf
     * Set the `tf_home` variable to the directory where the wh_terraform directory is cloned.<b>(required)</b>
     * Set the `aws_key_name` to the name of the key to be created in the region of your choice.(optional)
