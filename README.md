@@ -1,13 +1,13 @@
 # wh_nodejs_app
 
-##Description: 
-The wh_nodejs_app project is used to deploy a simple nodejs appication on an AWS instance. 
-The nodejs application will display the current timestamp of the AWS instance.
-The nodejs app will be routed via nginx.
-This project will provision the instance via terraform and deploy nodejs and nginx via ansible.
-The application will be available on the public ip of the AWS instance on port 80.
+## Description: 
+* The wh_nodejs_app project is used to deploy a simple nodejs appication on an AWS instance. 
+* The nodejs application will display the current timestamp of the AWS instance.
+* The nodejs app will be routed via nginx.
+* This project will provision the instance via terraform and deploy nodejs and nginx via ansible.
+* The application will be available on the public ip of the AWS instance on port 80.
 
-##Presumptions:
+## Presumptions:
 1. Nginx and nodejs servers are placed in the same machine.
 2. Nodejs application runs on 8090 port
 3. Nginx default port is 8080
@@ -15,14 +15,14 @@ The application will be available on the public ip of the AWS instance on port 8
 5. The application will be deployed on Ubuntu 16.04 machine.
 
 
-##Prerequisites:
+## Prerequisites:
 1. Install Python >=2.7 
 2. Terraform and ansible installed on Centos machine. Both configured on same machine.
 3. Terraform version v0.9.2 (latest). Installation steps: https://www.terraform.io/intro/getting-started/install.html
 4. Ansible version  2.2.1.0 (latest). Installation steps: http://docs.ansible.com/ansible/intro_installation.html
 5. Clone this repository: git clone https://github.com/aratik711/wh_nodejs_app.git
 6. The ssh key should be present in the ~/.ssh directory of the user you will be executing the terraform and ansible. If not then generate it using
-ssh-keygen -t rsa
+> ssh-keygen -t rsa
 7. The user with which you will be executing the terraform and ansible commands should have sudo rights and must have passwordless sudo access. 
 a. To enable sudo. Login with root user. Edit /etc/sudoers and add the line: <username> ALL=(ALL)       ALL
 Replace the <username> with your username. 
@@ -36,7 +36,7 @@ c. openssl rsa -in wh_terraform/setup/dta/wh_nodejs_key -outform pem > wh_terraf
 d. export AWS_ACCESS_KEY_ID="Your AWS access key"
 e. export AWS_SECRET_ACCESS_KEY="Your AWS secret key"
 
-##Variables to edit:
+## Variables to edit:
 1. Edit the wh_nodejs_app/wh_terraform/variables.tf
 a. Set the tf_home variable to the directory where the wh_terraform directory is cloned.(required)
 b. Set the aws_key_name to the name of the key to be created in the region of your choice.(optional)
@@ -52,7 +52,7 @@ h. Set the hostnames variable to set the internal hostname of the instance(optio
 Note: If the hostname is changed here then execute the following steps:
 i. Edit the wh_nodejs_app/wh_ansible/inventories/servers. Change the hostname in nodejs and nginx block. Both the hostnames will be same.
 
-##How to execute:
+## How to execute:
 
 1. To provision the machine with terraform execute the following command:
 cd wh_nodejs_app/wh_terraform
@@ -63,7 +63,7 @@ cd wh_nodejs_app/wh_ansible
 ansible-playbook -i inventories/servers site.yml
 4. After a few minutes your nodejs application will be accessible on the public IP of the instance on port 80. Just enter the public IP of the instance provided in terraform output in your browser and you will be able to see the current timestamp of the instance in your browser.
 
-##Known Issues/ Limitations:
+## Known Issues/ Limitations:
 1. The code has been tested on AWS Seoul and Virginia region but will work on other regions as well.
 2. The nodejs app displays static timestamp (current timestamp when the webpage was loaded).
 3. The terraform and ansible controller machines have to be Centos 6/7 OS.
