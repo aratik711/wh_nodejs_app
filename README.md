@@ -38,7 +38,8 @@
     * `export AWS_ACCESS_KEY_ID="Your AWS access key"`
     * `export AWS_SECRET_ACCESS_KEY="Your AWS secret key"`  
     Note: Here the key-name is wh_nodejs_key. You can change it as per your requirement.  
-    You will have to change the key-name in terrafrm variable as mentioned below.
+    You will have to change the key-name in terrafrm variable as mentioned below.  
+    The private-key and pem file should have the same name.
     
 
 ## Variables to edit:
