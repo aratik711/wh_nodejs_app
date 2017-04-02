@@ -21,7 +21,7 @@
 3. Terraform version v0.9.2 (latest). Installation steps: https://www.terraform.io/intro/getting-started/install.html
 4. Ansible version  2.2.1.0 (latest). Installation steps: http://docs.ansible.com/ansible/intro_installation.html
 5. Clone this repository: `git clone https://github.com/aratik711/wh_nodejs_app.git`
-6. The ssh key should be present in the ~/.ssh directory of the user you will be executing the terraform and ansible. If not then generate it using  
+6. The ssh key should be present in the ~/.ssh directory of the user you will be executing the terraform and ansible. If not then generate a passphraseless ssh key using  
 `ssh-keygen -t rsa`
 7. The user with which you will be executing the terraform and ansible commands should have sudo rights and must have passwordless sudo access. 
     1. To enable sudo. Login with root user. Edit /etc/sudoers and add the line:  
@@ -33,7 +33,7 @@
     Save and exit. You will now have passwordless sudo rights.
 8. Execute the following commands:
     * `cd wh_nodejs_app`
-    * `ssh-keygen -t rsa -f wh_terraform/setup/dta/wh_nodejs_key`
+    * `ssh-keygen -t rsa -f wh_terraform/setup/dta/wh_nodejs_key -q -N ""`
     * `openssl rsa -in wh_terraform/setup/dta/wh_nodejs_key -outform pem > wh_terraform/setup/dta/wh_nodejs_key.pem`
     * `export AWS_ACCESS_KEY_ID="Your AWS access key"`
     * `export AWS_SECRET_ACCESS_KEY="Your AWS secret key"`
