@@ -1,9 +1,9 @@
 ##Variables for terraform
 
-##Run time variable
+##Terraform home. This should be the path till the parent directory of main.tf. That is till wh_terraform.
 variable "tf_home" {
     description = "Path where main.tf is present"
-    default = "/home/janedoe/wh_nodejs_app/wh_terraform"  ##Add the path here or pass it while executing terraform apply
+    default = "/home/janedoe/wh_nodejs_app/wh_terraform" 
 } 
 
 #AWS Key name
