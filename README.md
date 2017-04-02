@@ -61,8 +61,8 @@
 `cd wh_nodejs_app/wh_terraform`  
 `terraform apply -state=state/dta/wh-aws-nodejs.tfstate`
 2. The above command should display the hostname/public IP address, username, password to connect to the instance. You should be able to do a passwordless ssh to the instance from the machine where terraform was executed.
-3. From the same machine from where terraform command was executed, execute the following 
-`cd wh_nodejs_app/wh_ansible` 
+3. From the same machine from where terraform command was executed, execute the following  
+`cd wh_nodejs_app/wh_ansible`  
 `ansible-playbook -i inventories/servers site.yml`
 4. After a few minutes your nodejs application will be accessible on the public IP of the instance on port 80. Just enter the public IP of the instance provided in terraform output in your browser and you will be able to see the current timestamp of the instance in your browser.
 
