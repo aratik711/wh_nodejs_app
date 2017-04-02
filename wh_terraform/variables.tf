@@ -3,7 +3,7 @@
 ##Run time variable
 variable "tf_home" {
     description = "Path where main.tf is present"
-    default = "/home/janedoe/wh_terraform"  ##Add the path here or pass it while executing terraform apply
+    default = "/home/janedoe/wh_nodejs_app/wh_terraform"  ##Add the path here or pass it while executing terraform apply
 } 
 
 #AWS Key name
