@@ -40,19 +40,20 @@
 
 ## Variables to edit:
 1. Edit the wh_nodejs_app/wh_terraform/variables.tf
-a. Set the tf_home variable to the directory where the wh_terraform directory is cloned.(required)
-b. Set the aws_key_name to the name of the key to be created in the region of your choice.(optional)
-c. Set the aws_region to the ID of the region of your choice.(optional)
-d. Set the instance_type to the size of instance you require.(default: t2.medium)(optional)
-e. Set the server_names variable to the name you want the instance to display in AWS EC2 console.(optional)
-f. Set the username to the user you want to create in the new machine.(optional)
-Note: If the username is changed here then please also execute the following steps:
-i. Set the user variable in wh_nodejs_app/wh_ansible/nginx.yml and wh_nodejs_app/wh_ansible/nodejs.yml.
-ii. Set the app_user variable in wh_nodejs_app/wh_ansible/group_vars/all/main.yml
-g. Set the user_password to set the password of the above created user.(reqiured)
-h. Set the hostnames variable to set the internal hostname of the instance(optional)
-Note: If the hostname is changed here then execute the following steps:
-i. Edit the wh_nodejs_app/wh_ansible/inventories/servers. Change the hostname in nodejs and nginx block. Both the hostnames will be same.
+    * Set the `tf_home` variable to the directory where the wh_terraform directory is cloned.<b>(required)</b>
+    * Set the `aws_key_name` to the name of the key to be created in the region of your choice.(optional)
+    * Set the `aws_region` to the ID of the region of your choice.(optional)
+    * Set the `instance_type` to the size of instance you require.(default: t2.medium)(optional)
+    * Set the `server_names` variable to the name you want the instance to display in AWS EC2 console.(optional)
+    * Set the `username` to the user you want to create in the new machine.(optional)
+    <br/>Note: If the username is changed here then please also execute the following steps:
+      1. Set the `user` variable in wh_nodejs_app/wh_ansible/nginx.yml and wh_nodejs_app/wh_ansible/nodejs.yml.
+      2. Set the `app_user` variable in wh_nodejs_app/wh_ansible/group_vars/all/main.yml
+    * Set the `user_password` to set the password of the above created user.<b>(required)</b>
+    * Set the `hostnames` variable to set the internal hostname of the instance(optional)
+    <br/>Note: If the hostname is changed here then execute the following steps:
+      1. Edit the wh_nodejs_app/wh_ansible/inventories/servers. Change the `hostname` in nodejs and nginx block.  
+      Both the hostnames will be same.
 
 ## How to execute:
 
