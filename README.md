@@ -20,9 +20,9 @@
 2. Terraform and ansible installed on Centos machine. Both configured on same machine.
 3. Terraform version v0.9.2 (latest). Installation steps: https://www.terraform.io/intro/getting-started/install.html
 4. Ansible version  2.2.1.0 (latest). Installation steps: http://docs.ansible.com/ansible/intro_installation.html
-5. Clone this repository: git clone https://github.com/aratik711/wh_nodejs_app.git
-6. The ssh key should be present in the ~/.ssh directory of the user you will be executing the terraform and ansible. If not then generate it using
-> ssh-keygen -t rsa
+5. Clone this repository: `git clone https://github.com/aratik711/wh_nodejs_app.git`
+6. The ssh key should be present in the ~/.ssh directory of the user you will be executing the terraform and ansible. If not then generate it using  
+`ssh-keygen -t rsa`
 7. The user with which you will be executing the terraform and ansible commands should have sudo rights and must have passwordless sudo access. 
     1. To enable sudo. Login with root user. Edit /etc/sudoers and add the line:  
     `username ALL=(ALL)       ALL`  
@@ -57,13 +57,13 @@
 
 ## How to execute:
 
-1. To provision the machine with terraform execute the following command:
-cd wh_nodejs_app/wh_terraform
-terraform apply -state=state/dta/wh-aws-nodejs.tfstate
+1. To provision the machine with terraform execute the following command:  
+`cd wh_nodejs_app/wh_terraform`  
+`terraform apply -state=state/dta/wh-aws-nodejs.tfstate`
 2. The above command should display the hostname/public IP address, username, password to connect to the instance. You should be able to do a passwordless ssh to the instance from the machine where terraform was executed.
-3. From the same machine rom where terraform command was executed, execute the following 
-cd wh_nodejs_app/wh_ansible 
-ansible-playbook -i inventories/servers site.yml
+3. From the same machine from where terraform command was executed, execute the following 
+`cd wh_nodejs_app/wh_ansible` 
+`ansible-playbook -i inventories/servers site.yml`
 4. After a few minutes your nodejs application will be accessible on the public IP of the instance on port 80. Just enter the public IP of the instance provided in terraform output in your browser and you will be able to see the current timestamp of the instance in your browser.
 
 ## Known Issues/ Limitations:
