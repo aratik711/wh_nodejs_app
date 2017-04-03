@@ -63,7 +63,7 @@ Note: Do edit the variables marked as <b>required</b>.
 ## How to execute:
 
 1. To provision the machine with terraform execute the following command:  
-`cd wh_nodejs_app/wh_terraform` 
+`cd wh_nodejs_app/wh_terraform`  
 `terraform get`  
 `terraform apply -state=state/dta/wh-aws-nodejs.tfstate`
 2. The above command should display the hostname/public IP address, username, password to connect to the instance. You should be able to do a passwordless ssh to the instance from the machine where terraform was executed.
